@@ -14,10 +14,17 @@
   Użycie: plik startowy main.tsx
 */
 
+// Importowanie bibliotek i komponentów
+import React from 'react';
 import '../index.css';
 import Calculator from './Calculator';
 
+// Definicja klasy Main
 const Main: React.FunctionComponent = () => {
+
+  // Zwraca element div (reprezentujący ramkę kalkulatora) zawierający:
+  // - elementy dekoracyjne na górze kalkulatora
+  // - komponent Calculator (zawierający logikę kalkulatora i renderujący jego przyciski i ekran)
   return (
     <div id="app">
       <p id="brand">Vadowitz</p>
