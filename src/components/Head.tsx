@@ -3,7 +3,7 @@ import '../index.css';
 const Head:React.FunctionComponent = () => {
     return (
         <h1 id="title">
-            Calculator
+            Kalkulator
         </h1>
   );
 }
