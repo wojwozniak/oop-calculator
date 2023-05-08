@@ -1,4 +1,4 @@
-# Calculator (Projekt końcowy z przedmiotu Programowanie Obiektowe)
+# Kalkulator (Projekt końcowy z przedmiotu Programowanie Obiektowe)
 
 ## Opis
 Kalkulator pozwalający wykonać wszystkie podstawowe operacje arytmetyczne. Projekt końcowy z przedmiotu Programowanie Obiektowe.

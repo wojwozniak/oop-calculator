@@ -1,4 +1,4 @@
-import './css.css';
+import '../index.css';
 
 const Head:React.FunctionComponent = () => {
     return (
