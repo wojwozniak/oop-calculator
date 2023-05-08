@@ -22,6 +22,8 @@ import Buttons from './Buttons';
 import { action } from './action.ts';
 
 
+// #TODO - tutaj jeszcze nie przerabiałem kodu
+
 const Calculator:React.FunctionComponent = () => {
 
     const reducer = (state: string, action: action) => {
@@ -205,6 +207,7 @@ const Calculator:React.FunctionComponent = () => {
     const [state, dispatch] = useReducer(reducer, "0");
 
 
+    // Renderowanie komponentów - ekranu i przycisków
     return (
         <>
             <Screen display={state} />
