@@ -1,28 +1,8 @@
 import React from 'react'
-import Button from './Button'
 import Screen from './Screen'
 import { useReducer } from 'react';
+import Buttons from './Buttons';
 
-const buttons = [
-    { name: "AC", symbol: "AC" },
-    { name: "equals", symbol: "=" },
-    { name: "square", symbol: "√" },
-    { name: "multiply", symbol: "*" },
-    { name: "divide", symbol: "/" },
-    { name: "plus", symbol: "+" },
-    { name: "minus", symbol: "-" },
-    { name: "dot", symbol: "." },
-    { name: "zero", symbol: "0" },
-    { name: "one", symbol: "1" },
-    { name: "two", symbol: "2" },
-    { name: "three", symbol: "3" },
-    { name: "four", symbol: "4" },
-    { name: "five", symbol: "5" },
-    { name: "six", symbol: "6" },
-    { name: "seven", symbol: "7" },
-    { name: "eight", symbol: "8" },
-    { name: "nine", symbol: "9" }
-];
 
 const Calculator:React.FunctionComponent = () => {
     // Possible actions for reducer
@@ -209,19 +189,11 @@ const Calculator:React.FunctionComponent = () => {
     // Main state of app
     const [state, dispatch] = useReducer(reducer, "0");
 
-    // Receive data of button clicked and pass it to the reducer
-    const getClicked = (data: action) => {
-        dispatch(data);
-    }
 
     return (
         <>
             <Screen display={state} />
-            <div className="button-container">
-                {buttons.map((button) => {
-                    return <Button key={button.name} name={button.name} passData={getClicked} symbol={button.symbol} />
-                })}
-            </div>
+            <Buttons dispatchReducer={dispatch}/>
         </>
     )
 }
