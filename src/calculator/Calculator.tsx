@@ -1,13 +1,28 @@
+/*
+  Projekt końcowy z przedmiotu
+  Programowanie Obiektowe (sem. letni 2023)
+  Kalkulator
+  Wersja 1.0
+  Autorzy:
+  Anna Pierzchała, Wojciech Woźniak
+  --------------------------------------------
+  Komponent Calculator
+  Klasa zawierająca główną logikę kalkulatora
+  Renderuje komponenty Screen i Buttons
+  --------------------------------------------
+  Użycie: komponent Main
+*/
+
+
+// Importowanie bibliotek, komponentów i typów
 import React from 'react'
 import Screen from './Screen'
 import { useReducer } from 'react';
 import Buttons from './Buttons';
+import { action } from './action.ts';
 
 
 const Calculator:React.FunctionComponent = () => {
-    // Possible actions for reducer
-    type action =
-        | "AC" | "equals" | "square" | "multiply" | "divide" | "plus" | "minus" | "dot" | "zero" | "one" | "two" | "three" | "four" | "five" | "six" | "seven" | "eight" | "nine";
 
     const reducer = (state: string, action: action) => {
         // Helper variables
