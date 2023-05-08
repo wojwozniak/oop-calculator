@@ -10,4 +10,12 @@ This is a calculator that can perform basic arithmetic operations. It is built u
 - cd into the repo
 - Run `npm install`
 - Run `npm start` to start the app
-After first run, you can run `npm start` to start the app. Website will be available at `localhost:3000`
+After first run, you can run `npm start` to start the app. Website will be available at `localhost:5173`
+
+
+
+## Technology
+Website has been created and developed using vite (`npm create vite@latest`)
+Technologies used:
+- React
+- Typescript
