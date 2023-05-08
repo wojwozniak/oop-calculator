@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://wojwozniak.github.io/oop-project/",
+  "homepage": "https://wojwozniak.github.io/OOP-Project/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
