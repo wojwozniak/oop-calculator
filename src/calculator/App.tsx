@@ -1,4 +1,4 @@
-import './index.css';
+import '../index.css';
 import Button from './Button'
 import Screen from './Screen'
 import { useReducer } from 'react';

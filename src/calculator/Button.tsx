@@ -1,5 +1,5 @@
 import React from 'react'
-import "./css.css"
+import "../index.css"
 
 type ButtonProps = {
   name: string;
