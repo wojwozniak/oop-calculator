@@ -11,10 +11,10 @@ Kalkulator pozwalający wykonać wszystkie podstawowe operacje arytmetyczne. Pro
 - Sklonuj to repozytorium
 - Wejdź do repozytorium w terminalu za pomocą `cd`
 - Wywołaj komendę `npm install`
-- Wywołaj `npm run start` by uruchomić aplikację. Można użyć też `npm run dev` by wejść w tryb developerski (automatyczne przeładowanie po zmianach, więcej ostrzerzeń przed potecjalnymi błędami)
+- Wywołaj `npm run dev` by uruchomić aplikację.
 Strona będzie dostępna pod adresem `localhost:5173`
 
-Po pierwszym uruchomieniu, by ponownie uruchomić aplikację wystarczy wywołać `npm run start` w folderze z projektem.
+Po pierwszym uruchomieniu, by ponownie uruchomić aplikację wystarczy wywołać `npm run dev` w folderze z projektem.
 
 Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages (pod adresem #TODO wpisać adres strony)
 
