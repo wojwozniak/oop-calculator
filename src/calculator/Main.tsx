@@ -24,7 +24,7 @@ const buttons = [
   { name: "nine", symbol: "9" }
 ];
 
-const App: React.FunctionComponent = () => {
+const Main: React.FunctionComponent = () => {
 
   // Possible actions for reducer
   type action =
@@ -229,4 +229,4 @@ const App: React.FunctionComponent = () => {
   );
 }
 
-export default App;
+export default Main;
