@@ -20,6 +20,13 @@ Niezależnie od powyższej metody strona dostępna również za pośrednictwem G
 Strona została stworzona przy użyciu vite (`npm create vite@latest`)
 Głównym językiem użytym do stworzenia strony był Typescript (biblioteka React)
 
+## Uproszczona struktura projektu
+Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
+- Kod kalkulatora (folder src/calculator)
+- Kod reszty strony (folder src/components,  pliki src/main.tsx i index.html)
+- Pliki konfiguracyjne (wszystkie pliki poza powyższymi)
+
+
 
 ## Struktura kalkulatora
 #TODO streścimy tutaj diagram klas
