@@ -29,6 +29,8 @@ Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 - Kod reszty strony (folder src/components,  pliki src/main.tsx i index.html)
 - Pliki konfiguracyjne (wszystkie pliki poza powyższymi)
 
+*Napisany przez nas kod znajduje się jedynie w folderze src*
+
 
 ## Struktura kalkulatora
 #TODO streścimy tutaj diagram klas
