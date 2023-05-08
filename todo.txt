@@ -1,0 +1,5 @@
+Możliwość zmiany rozmiaru UI
+Przerobienie modułu obliczania na obiektowy
+Przebudowa Calculator.tsx
+Postawienie strony
+Podawanie czemu nie można obliczyć gdy jest błąd? W sensie małe miejsce gdzie będą wypisywane błędy w stylu "samotny znak na końcu"
