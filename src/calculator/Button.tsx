@@ -8,6 +8,7 @@
   --------------------------------------------
   Klasa Button
   Klasa reprezentująca przyciski kalkulatora
+  --------------------------------------------
   Użycie: komponent Calculator
 */
 
