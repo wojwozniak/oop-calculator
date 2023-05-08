@@ -1,0 +1,13 @@
+Pierwsze uruchomienie
+- cd do folderu projektu
+- npm install
+- npm run dev
+
+Kolejne uruchomienia
+- npm run dev
+
+Adres: localhost:5173
+
+Aktualizacja strony:
+- push zmian do repo
+- npm run deploy
