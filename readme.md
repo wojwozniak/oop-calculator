@@ -1,7 +1,10 @@
 # Kalkulator (Projekt końcowy z przedmiotu Programowanie Obiektowe)
 
 ## Opis
-Kalkulator pozwalający wykonać wszystkie podstawowe operacje arytmetyczne. Projekt końcowy z przedmiotu Programowanie Obiektowe.
+Kalkulator pozwalający wykonać wszystkie podstawowe operacje arytmetyczne. Projekt końcowy - przedmiot Programowanie Obiektowe.
+
+
+*Napisany przez nas kod znajduje się w folderze src*
 
 
 ## Jak skompilować i uruchomić
@@ -28,8 +31,6 @@ Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 - Kod kalkulatora (folder src/calculator)
 - Kod reszty strony (folder src/components,  pliki src/main.tsx i index.html)
 - Pliki konfiguracyjne (wszystkie pliki poza powyższymi)
-
-*Napisany przez nas kod znajduje się jedynie w folderze src*
 
 
 ## Struktura kalkulatora
