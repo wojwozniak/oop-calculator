@@ -14,9 +14,10 @@
   Użycie: main.tsx
 */
 
-// Importowanie bibliotek i komponentów
+
+
+// Importy
 import React from 'react';
-import '../index.css';
 import Calculator from './Calculator';
 
 // Definicja klasy Main

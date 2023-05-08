@@ -21,6 +21,7 @@ import ReactDOM from 'react-dom/client';
 import Main from './calculator/Main';
 import Head from './components/Head';
 import Foot from './components/Foot';
+import './index.css';
 
 // Punkt wejściowy aplikacji
 // Renderujemy odpowiednie komponenty w elemencie o id root (z pliku index.html)

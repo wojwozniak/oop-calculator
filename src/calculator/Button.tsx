@@ -12,8 +12,7 @@
   Użycie: komponent Calculator
 */
 
-// Importowanie bibliotek stylu
-import "../index.css"
+
 
 // Definicja klasy Button
 const Button = ({ name, symbol, passData }: {name: string, symbol: string, passData: Function}) => {
