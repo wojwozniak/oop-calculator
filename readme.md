@@ -19,6 +19,9 @@ Niezależnie od powyższej metody strona dostępna również za pośrednictwem G
 ## Technologie
 Strona została stworzona przy użyciu vite (`npm create vite@latest`)
 Głównym językiem użytym do stworzenia strony był Typescript (biblioteka React)
+Do wygenerowania diagramu klas użyto strony [draw.io](https://draw.io/)
+Wykorzystaliśmy również generator siatki CSS [CSS Grid Generator](https://cssgrid-generator.netlify.app/)
+
 
 ## Uproszczona struktura projektu
 Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
@@ -27,10 +30,8 @@ Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 - Pliki konfiguracyjne (wszystkie pliki poza powyższymi)
 
 
-
 ## Struktura kalkulatora
 #TODO streścimy tutaj diagram klas
-
 
 
 ## Struktura repozytorium
@@ -51,4 +52,4 @@ Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 - tsconfig.node.json - plik konfiguracyjny typescript
 - vite.config.ts - plik konfiguracyjny vite
 
-Repozytorium zawiera również diagram klas kalkulatora (wygenerowany przez proponowaną przez prowadzącego stronę)
+Repozytorium zawiera również diagram klas kalkulatora [z tej strony](https://draw.io/)
