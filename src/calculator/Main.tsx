@@ -11,7 +11,7 @@
   Wykorzystywana jest do stworzenia "obudowy kalkulatora"
   i wywołania komponentu Calculator zawierającego jego logikę
   --------------------------------------------
-  Użycie: plik startowy main.tsx
+  Użycie: main.tsx
 */
 
 // Importowanie bibliotek i komponentów
