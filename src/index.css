@@ -1,3 +1,21 @@
+/*
+  Projekt końcowy z przedmiotu
+  Programowanie Obiektowe (sem. letni 2023)
+  Kalkulator
+  Wersja 1.0
+  Autorzy:
+  Anna Pierzchała, Wojciech Woźniak
+  --------------------------------------------
+  Biblioteka stylów CSS aplikacji
+  Część kodu została wygenerowana za pomocą
+  generatora siatek CSS (jest on wyznaczony
+  przez komentarze w kodzie)
+  --------------------------------------------
+  Użycie: importowany do wszystkich komponentów
+*/
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron&display=swap');
 
 body, html {
@@ -75,6 +93,20 @@ h1 {
   width: fit-content !important;
   background-color: #20231E;
 }
+
+#foot {
+  margin-top: 30px;
+}
+
+#foot a {
+  color: goldenrod;
+}
+
+#foot a:hover {
+  color: darkgoldenrod;
+}
+
+/* Kod siatki */
 
 .button-container {  
   background-color: gray;
@@ -180,14 +212,4 @@ h1 {
 
 .nine { grid-area: nine; }
 
-#foot {
-  margin-top: 30px;
-}
-
-#foot a {
-  color: goldenrod;
-}
-
-#foot a:hover {
-  color: darkgoldenrod;
-}
+/* Koniec kodu siatki */
