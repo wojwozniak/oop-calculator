@@ -1,3 +1,19 @@
+/*
+  Projekt końcowy z przedmiotu
+  Programowanie Obiektowe (sem. letni 2023)
+  Kalkulator
+  Wersja 1.0
+  Autorzy:
+  Anna Pierzchała, Wojciech Woźniak
+  --------------------------------------------
+  Klasa Main
+  Klasa zawiera główny komponent aplikacji
+  Wykorzystywana jest do stworzenia "obudowy kalkulatora"
+  i wywołania komponentu Calculator zawierającego jego logikę
+  --------------------------------------------
+  Użycie: plik startowy main.tsx
+*/
+
 import '../index.css';
 import Calculator from './Calculator';
 
