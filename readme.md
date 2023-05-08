@@ -16,7 +16,7 @@ Strona będzie dostępna pod adresem `localhost:5173`
 
 Po pierwszym uruchomieniu, by ponownie uruchomić aplikację wystarczy wywołać `npm run dev` w folderze z projektem.
 
-Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages (pod adresem #TODO wpisać adres strony)
+Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages [link](https://wojwozniak.github.io/oop-project/)
 
 
 ## Technologie
@@ -24,6 +24,7 @@ Strona została stworzona przy użyciu vite (`npm create vite@latest`)
 Głównym językiem użytym do stworzenia strony był Typescript (biblioteka React)
 Do wygenerowania diagramu klas użyto strony [draw.io](https://draw.io/)
 Wykorzystaliśmy również generator siatki CSS [CSS Grid Generator](https://cssgrid-generator.netlify.app/)
+Strona hostowana jest za pomocą Github Pages
 
 
 ## Uproszczona struktura projektu
