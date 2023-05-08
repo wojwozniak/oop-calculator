@@ -35,6 +35,8 @@ Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 
 
 ## Struktura repozytorium
+Poniżej znajduje się rozpiska wszystkich folderów i plików w repozytorium (poza tymi bezpośrednio związanymi z kalkulatorem - te zostały opisane powyżej)
+
 - node_modules - folder z zależnościami deweloperskimi - generuje się po wywołaniu npm install (nic tu nie zmieniamy)
 - Folder src:
     - calculator - folder z kodem źródłowym kalkulatora
