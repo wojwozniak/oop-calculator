@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from 'react'
+/*
+  Projekt końcowy z przedmiotu
+  Programowanie Obiektowe (sem. letni 2023)
+  Kalkulator
+  Wersja 1.0
+  Autorzy:
+  Anna Pierzchała, Wojciech Woźniak
+  --------------------------------------------
+    Komponent Screen
+    Komponent wyświetlający ekran kalkulatora
+    (Przyjmuje jego zawartość jako parametr)
+  --------------------------------------------
+  Użycie: komponent Calculator
+*/
 
 
-type ScreenProps = {
-    display: string;
-}
 
-const Screen:React.FunctionComponent<ScreenProps> = ({display}) => {
-  
-  // State of screen size
-  const [cl, newCl] = useState("");
+// Definicja komponentu Screen
+const Screen = ({ display }: { display: string }) => {
 
-  // Make screen larger if there is more than nine signs on the screen (it will be passed to screen as a property)
-  useEffect(() => {
-    if (display.length > 9) {
-      newCl("big-screen");
-    } else {
-      newCl("");
-    }
-  },[display])
-  
+
+  // Zwraca element div zawierający ekran kalkulatora
+  // (przekazany mu parametr display zawiera zawartość ekranu)
   return (
-        <div id="screen" className={cl}>
-          <p id="screen-display" className={cl}>{display}</p>
-      </div>
+    <div id="screen">
+      <p id="screen-display">{display}</p>
+    </div>
   )
 }
 
