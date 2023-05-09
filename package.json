@@ -1,6 +1,6 @@
 {
   "name": "calculator",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "homepage": "https://wojwozniak.github.io/OOP-Project/",
