@@ -21,6 +21,9 @@
 export default function parse(number: string): string {
   // #TODO: Implementacja funkcji
   // Chcemy tu nawalić dużo klas
+  // Możemy zrobić osobny calculate
+  // Który z kolei będzie miał osobne klasy
+  // na różne operacje
   let counted = eval(number);
   let output = Math.round((counted + Number.EPSILON) * 100) / 100;
   return output.toString();
