@@ -25,7 +25,7 @@ import parse from "./parse";
  * który wykorzystujemy do obliczenia wyniku 
  * @returns {string} - wynik działania
  */
-function evaluator(input: string): string {
+const evaluator = (input: string): string => {
     const onpArray = parse(input);
     console.log(onpArray);
     const stack: Expression[] = [];
@@ -77,7 +77,7 @@ function evaluator(input: string): string {
     }
 
     if (stack.length === 1) {
-        return stack[0].evaluate().toFixed(2).toString();
+        return stack[0].evaluate().toFixed(2).replace(/\.?0*$/, "").toString();
     } else {
         console.log(stack);
         throw new Error('Invalid expression');
