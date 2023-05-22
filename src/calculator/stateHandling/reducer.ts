@@ -37,9 +37,9 @@ export default function reducer(state: string, action: action): string {
     // helper - zmienna pomocnicza, która przechowuje stan aplikacji
     let helper: string;
     // last - ostatni znak w stanie aplikacji
-    let last = state[state.length - 1];
+    let lastSign = state[state.length - 1];
     // preLast - przedostatni znak w stanie aplikacji
-    let preLast = state[state.length - 2];
+    let preLastSign = state[state.length - 2];
 
 
     // Sprawdzimy teraz kilka warunków - ustalimy, 
@@ -51,82 +51,39 @@ export default function reducer(state: string, action: action): string {
         if (action === "plus" || action === "multiply" || action === "dot" || action === "divide") {
             return "0";
         }
-        
+
         // Aktualizujemy zmienną helper
         helper = "";
     } else {
         helper = state;
     }
 
-    // Check if calculation won't throw an error
-    const isCalculationElgible = () => {
-        if (isLastSign(last)) {
-            return false;
-        }
-        return true;
-    }
-
-    // Check if there is a dot in state that isn't followed by a sign (making sure that there is at least one number inbetween is taken care by main switch statement)
-    const isDotPlacable = () => {
-        // Check if given character is a sign or not
-        const isAnySign = (x: string) => {
-            if (x === "+" || x === "-" || x === "/" || x === "*" || x === ".") {
-                return true;
-            }
-            return false;
-        }
-
-        // Same as above but excluding dots
-        const isFunctionSign = (x: string) => {
-            if (x === "+" || x === "-" || x === "/" || x === "*") {
-                return true;
-            }
-            return false;
-        }
-
-        let number = true;
-        let sign = true;
-
-        for (let i = 0; i < state.length; i++) {
-            if (state[i] === '.') {
-                number = false;
-                sign = false;
-            } else if (isFunctionSign(state[i])) {
-                sign = true;
-            } else if (!isAnySign(state[i])) {
-                number = true;
-            }
-        }
-        if (number === true && sign === true && !isLastSign(last)) {
-            return true;
-        } else return false;
-    }
-
-    // Main reducer
+    // Główny switch, który obsługuje wszystkie akcje
     switch (action) {
-        // Calculation
+        // Obliczanie wartości (wywołanie funkcji parse)
         case 'equals':
-            if (isCalculationElgible()) {
+            if (!isSign(lastSign)) {
                 helper = state;
                 newState = parse(helper);
             } else {
                 newState = state;
             }
             break;
+        // Obliczanie pierwiastka (wywołanie funkcji parse, 
+        // obliczenie pierwiastka z wyniku), i znowu parse
         case 'square':
-            // Square root uses same function as calculation (it calculates first)
-            if (isCalculationElgible()) {
+            if (!isSign(lastSign)) {
                 helper = state;
                 newState = parse(Math.sqrt(parseInt(parse(helper), 10)).toString());
             } else {
                 newState = state;
             }
             break;
-        // AC button resets calculator to default
+        // Resetowanie stanu aplikacji
         case 'AC':
             newState = "0";
             break;
-        // Numbers are no problem, you can put then anywhere
+        // Wpisywanie liczb
         case 'zero':
             newState = helper + '0';
             break;
@@ -157,41 +114,44 @@ export default function reducer(state: string, action: action): string {
         case 'nine':
             newState = helper + "9";
             break;
-        // All the calculations (except the subtraction) - we only need to check if last sign isn't a dot or sign
+        // Obliczenia - dla większości obliczeń sprawdzamy tylko,
+        // czy ostatni element w stringu jest znakiem 
+        // (jeśli tak, to nie pozwalamy)
         case 'plus':
-            if (!isLastSign(last)) {
+            if (!isSign(lastSign)) {
                 newState = helper + "+";
             } else {
                 newState = helper;
             }
             break;
         case 'multiply':
-            if (!isLastSign(last)) {
+            if (!isSign(lastSign)) {
                 newState = helper + "*";
             } else {
                 newState = helper;
             }
             break;
         case 'divide':
-            if (!isLastSign(last)) {
+            if (!isSign(lastSign)) {
                 newState = helper + "/";
             } else {
                 newState = helper;
             }
             break;
-        // Minus are a bit more special - they can be the only sign or appear after other signs that are not a dot
+        // Minus jest trochę bardziej skomplikowany -
+        // może być jedynym znakiem i pojawić się zaraz po innym znaku
         case "minus":
-            if (last === '.' || (isLastSign(last) && (preLast === "+" || preLast ===
-                "-" || preLast === "/" || preLast === "*" || preLast === undefined))) {
+            if (lastSign === '.' || (isSign(lastSign) && (preLastSign === "+" || preLastSign ===
+                "-" || preLastSign === "/" || preLastSign === "*" || preLastSign === undefined))) {
                 newState = helper;
             }
             else {
                 newState = helper + '-';
             }
             break;
-        // Dot are most tricky, we need to make sure that there won't be any sign directly after a dot and that there won't be two dots without any sign inbetween
+        // Kropka - sprawdzenie czy legalne w osobnej funkcji
         case "dot":
-            if (isDotPlacable()) {
+            if (isDotPlacable(state, lastSign)) {
                 newState = state + ".";
             } else {
                 newState = state;
@@ -199,14 +159,49 @@ export default function reducer(state: string, action: action): string {
             break;
         default:
             throw new Error();
-    } // end of switch
+    }
     return newState;
 }
 
-
-const isLastSign = (lastSign:string) => {
-    if (lastSign !== "+" && lastSign !== "*" && lastSign !== "/" && lastSign !== "." && lastSign !== "-") {
+/**
+ * Function that check if given character is a sign
+ * @param {string} sign - character to check 
+ * @returns {boolean}
+ */
+const isSign = (sign: string): boolean => {
+    if (sign !== "+" && sign !== "*" && sign !== "/" && sign !== "." && sign !== "-") {
         return false;
     }
     return true;
+}
+
+/**
+ * Funkcja sprawdzająca, czy aktualnie można
+ * umieścić kropkę w stanie aplikacji
+ * @param {string} state - aktualny stan aplikacji 
+ * @param {string} lastSign - ostatni znak w stanie aplikacji 
+ * @returns {boolean}
+ */
+const isDotPlacable = (state: string, lastSign: string): boolean => {
+
+    // Funkcja pomocnicza, która sprawdza, czy dany znak jest znakiem funkcyjnym
+    const isFunctionSign = (x: string) => isSign(x) && x !== '.';
+
+    // Zmienne pomocnicze
+    let number = true;
+    let sign = true;
+
+    for (let i = 0; i < state.length; i++) {
+        if (state[i] === '.') {
+            number = false;
+            sign = false;
+        } else if (isFunctionSign(state[i])) {
+            sign = true;
+        } else if (!isSign(state[i])) {
+            number = true;
+        }
+    }
+    if (number === true && sign === true && !isSign(lastSign)) {
+        return true;
+    } else return false;
 }
