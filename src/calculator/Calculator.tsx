@@ -19,7 +19,7 @@ import React from 'react'
 import Screen from './Screen'
 import { useReducer } from 'react';
 import Buttons from './Buttons';
-import reducer from './stateHandling/reducer';
+import reducer from './handlers/reducer';
 
 
 // Główna klasa kalkulatora
