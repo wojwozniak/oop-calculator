@@ -10,15 +10,15 @@
   Zawiera główny reducer, który obsługuje wszystkie 
   akcje wykonywane przez użytkownika (wpływające
   na stan aplikacji).
-  Po kliknięciu przycisku '=' wywoływana jest funkcja
-  parse, która oblicza wynik działania.
+  Po kliknięciu przycisku '=' wywołujemy
+  evaluator, która oblicza wynik działania.
   --------------------------------------------
   Użycie: komponent Calculator
 */
 
 // Importujemy możliwe typy akcji z pliku action.ts
 import { action } from './action.ts';
-import parse from './parse.ts';
+import evaluator from './evaluator.ts';
 
 /**
  * Główny reducer aplikacji - obsługuje wszystkie akcje
@@ -64,7 +64,7 @@ const reducer = (state: string, action: action): string => {
         case 'equals':
             if (!isSign(lastSign)) {
                 helper = state;
-                newState = parse(helper);
+                newState = evaluator(helper);
             } else {
                 newState = state;
             }
@@ -74,7 +74,7 @@ const reducer = (state: string, action: action): string => {
         case 'square':
             if (!isSign(lastSign)) {
                 helper = state;
-                newState = parse(Math.sqrt(parseInt(parse(helper), 10)).toString());
+                newState = evaluator(Math.sqrt(parseInt(evaluator(helper), 10)).toString());
             } else {
                 newState = state;
             }
