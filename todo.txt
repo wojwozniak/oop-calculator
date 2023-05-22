@@ -1,6 +1,5 @@
 Możliwość zmiany rozmiaru UI
-Przerobienie modułu obliczania na obiektowy
 Postawienie strony
 Podawanie czemu nie można obliczyć gdy jest błąd? W sensie małe miejsce gdzie będą wypisywane błędy w stylu "samotny znak na końcu"
-Chcemy dodać nawiasy?
-I usuwanie pojedyńczego znaku?
+usuwanie pojedyńczego znaku?
+Automatyczne testy
