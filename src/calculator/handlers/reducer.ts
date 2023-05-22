@@ -6,7 +6,7 @@
   Autorzy:
   Anna Pierzchała, Wojciech Woźniak
   --------------------------------------------
-  Funkcja reducer
+  Reducer
   Zawiera główny reducer, który obsługuje wszystkie 
   akcje wykonywane przez użytkownika (wpływające
   na stan aplikacji).
@@ -27,7 +27,7 @@ import parse from './parse.ts';
  * @param {action} action - akcja wykonywana przez użytkownika
  * @returns {string} - nowy stan aplikacji
  */
-export default function reducer(state: string, action: action): string {
+const reducer = (state: string, action: action): string => {
     // Deklarujemy zmienne pomocnicze
     // Możemy je zadeklarować bez useState, ponieważ
     // jesteśmy wewnątrz reducera - będziemy używać ich tylko raz
@@ -205,3 +205,6 @@ const isDotPlacable = (state: string, lastSign: string): boolean => {
         return true;
     } else return false;
 }
+
+
+export default reducer;
