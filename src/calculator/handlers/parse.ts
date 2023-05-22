@@ -17,57 +17,66 @@
  * Parser operacji - przerabia string na tablicę
  * znaków w ONP
  * @param {string} input - stan aplikacji, który wykorzystujemy do obliczenia wyniku 
- * @returns {string} - wynik działania
+ * @returns {string[]} - wynik działania
  */
 const parse = (input: string): string[] => {
-  const output: string[] = [];
-  const stack: string[] = [];
-  const tokens = input.split(/\s+/);
+  const operators: { [key: string]: { precedence: number } } = {
+    '+': { precedence: 1 },
+    '-': { precedence: 1 },
+    '*': { precedence: 2 },
+    '/': { precedence: 2 },
+  };
 
-  const numberRegex = /^(\d+(\.\d+)?|\.\d+)$/;
-  const operatorRegex = /^[+\-*/]$/;
+  // Pomocnicze tablice
+  const outputQueue: string[] = [];
+  const operatorStack: string[] = [];
+  let numberBuffer = '';
 
-  for (const token of tokens) {
-    if (numberRegex.test(token)) {
-      output.push(parseFloat(token).toString());
-    } else if (operatorRegex.test(token)) {
-      while (
-        stack.length > 0 &&
-        operatorRegex.test(stack[stack.length - 1]) &&
-        getPrecedence(token) <= getPrecedence(stack[stack.length - 1])
-      ) {
-        output.push(stack.pop()!);
-      }
-      stack.push(token);
-    } else {
-      throw new Error('Nieznany token: ' + token);
+  // Pomocnicza funkcja do czyszcznia bufora
+  const flushNumberBuffer = (): void => {
+    if (numberBuffer !== '') {
+      outputQueue.push(numberBuffer);
+      numberBuffer = '';
+    }
+  };
+
+  // Pomocnicza funkcja do przetwarzania operatorów
+  const processOperator = (operator: string): void => {
+    flushNumberBuffer();
+
+    let op1 = operator;
+    let op2 = operatorStack[operatorStack.length - 1];
+
+    while (
+      operators[op2] &&
+      ((operators[op1].precedence === operators[op2].precedence) ||
+        (operators[op1].precedence < operators[op2].precedence))
+    ) {
+      outputQueue.push(operatorStack.pop() as string);
+      op2 = operatorStack[operatorStack.length - 1];
+    }
+
+    operatorStack.push(op1);
+  };
+
+  for (let i = 0; i < input.length; i++) {
+    const token = input[i];
+
+    if (token.match(/[0-9.]/)) {
+      numberBuffer += token;
+    } else if (token in operators) {
+      processOperator(token);
     }
   }
 
-  while (stack.length > 0) {
-    if (!operatorRegex.test(stack[stack.length - 1])) {
-      throw new Error('Nieznany operator: ' + stack[stack.length - 1]);
-    }
-    output.push(stack.pop()!);
+  flushNumberBuffer();
+
+  while (operatorStack.length > 0) {
+    outputQueue.push(operatorStack.pop() as string);
   }
 
-  return output;
-}
+  return outputQueue;
+};
 
-
-/**
- * getPrecedence - zwraca priorytet operatora
- * @param {string} operator - operator, którego priorytet 
- * chcemy poznać 
- * @returns {number} - priorytet operatora
- */
-const getPrecedence = (operator: string): number => {
-  if (operator === '+' || operator === '-') {
-    return 1;
-  } else if (operator === '*' || operator === '/') {
-    return 2;
-  }
-  return 0;
-}
 
 export default parse;
