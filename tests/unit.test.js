@@ -12,10 +12,10 @@
   Użycie: npm run test
 */
 import { expect } from 'chai';
-import { parse } from '../src/calculator/handlers/parse';
+import { parse } from 'parse';
 
 describe('Nazwa testu', () => {
-    it('Opis testu', () => {
-      expect(parse('2')).to.equal('2');
-    });
+  it('Opis testu', () => {
+    expect(parse('2')).to.equal('2');
   });
+});
