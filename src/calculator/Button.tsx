@@ -15,7 +15,7 @@
 
 
 // Definicja klasy Button
-const Button = ({ name, symbol, passData }: {name: string, symbol: string, passData: Function}) => {
+const Button = ({ name, symbol, passData }: {name: string, symbol: string, passData: React.Dispatch<string>}) => {
 
   // Każdy przycisk renderuje się jako element JSX
   // Po kliknięciu wywołuje funkcję przekazaną przez komponent Calculator przekazując jej swoją nazwę jako argument

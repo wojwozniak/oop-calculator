@@ -16,8 +16,7 @@
   Użycie: komponent Calculator
 */
 
-// Importujemy możliwe typy akcji z pliku action.ts
-import { action } from './action.ts';
+// Importy
 import evaluator from './evaluator.ts';
 
 /**
@@ -27,7 +26,7 @@ import evaluator from './evaluator.ts';
  * @param {action} action - akcja wykonywana przez użytkownika
  * @returns {string} - nowy stan aplikacji
  */
-const reducer = (state: string, action: action): string => {
+const reducer = (state: string, action: string): string => {
     // Usuwaniem zajmujemy się na samym początku
     // (nie marnujemy zasobów na definiowanie zmiennych pomocniczych)
     if(action == "del") {
@@ -47,9 +46,9 @@ const reducer = (state: string, action: action): string => {
     // helper - zmienna pomocnicza, która przechowuje stan aplikacji
     let helper: string;
     // last - ostatni znak w stanie aplikacji
-    let lastSign = state[state.length - 1];
+    const lastSign = state[state.length - 1];
     // preLast - przedostatni znak w stanie aplikacji
-    let preLastSign = state[state.length - 2];
+    const preLastSign = state[state.length - 2];
 
 
     // Sprawdzimy teraz kilka warunków - ustalimy, 

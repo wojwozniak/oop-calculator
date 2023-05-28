@@ -22,7 +22,7 @@ import buttons from './buttonList.json'
 
 
 // Komponent Buttons (przyjmuje jeden argument - funkcję dispatchReducer odpowiadającą za przekazywanie kliknięć do komponentu Calculator)
-const Buttons = ({dispatchReducer} : {dispatchReducer:Function}) => {
+const Buttons = ({dispatchReducer} : {dispatchReducer:React.Dispatch<string>}) => {
 
     
 
@@ -35,7 +35,7 @@ const Buttons = ({dispatchReducer} : {dispatchReducer:Function}) => {
                     key={button.name} 
                     name={button.name} 
                     passData={
-                        (e:React.MouseEvent<HTMLButtonElement>) => 
+                        (e:string) => 
                         dispatchReducer(e)
                     } 
                     symbol={button.symbol} 

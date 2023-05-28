@@ -44,7 +44,7 @@ const parse = (input: string): string[] => {
   const processOperator = (operator: string): void => {
     flushNumberBuffer();
 
-    let op1 = operator;
+    const op1 = operator;
     let op2 = operatorStack[operatorStack.length - 1];
 
     while (

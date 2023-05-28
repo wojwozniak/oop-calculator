@@ -27,7 +27,6 @@ import parse from "./parse";
  */
 const evaluator = (input: string): string => {
     const onpArray = parse(input);
-    console.log(onpArray);
     const stack: Expression[] = [];
 
     for (const token of onpArray) {
