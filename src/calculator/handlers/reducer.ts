@@ -28,6 +28,16 @@ import evaluator from './evaluator.ts';
  * @returns {string} - nowy stan aplikacji
  */
 const reducer = (state: string, action: action): string => {
+    // Usuwaniem zajmujemy się na samym początku
+    // (nie marnujemy zasobów na definiowanie zmiennych pomocniczych)
+    if(action == "del") {
+        if(state.length > 1) {
+            return state.slice(0, -1);
+        } else {
+            return "0";
+        }
+    }
+
     // Deklarujemy zmienne pomocnicze
     // Możemy je zadeklarować bez useState, ponieważ
     // jesteśmy wewnątrz reducera - będziemy używać ich tylko raz

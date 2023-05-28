@@ -1,5 +1,2 @@
 Możliwość zmiany rozmiaru UI
 Postawienie strony
-Podawanie czemu nie można obliczyć gdy jest błąd? W sensie małe miejsce gdzie będą wypisywane błędy w stylu "samotny znak na końcu"
-usuwanie pojedyńczego znaku?
-Automatyczne testy

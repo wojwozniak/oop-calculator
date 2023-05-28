@@ -18,6 +18,7 @@
 export type action =
         | "AC" 
         | "equals" 
+        | "del"
         | "square" 
         | "multiply" 
         | "divide" 
