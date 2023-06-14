@@ -24,8 +24,8 @@ const Foot:React.FunctionComponent = () => {
   // Zwraca element p zawierający podtytuł strony
   return (
     <div id="foot">
-        <p id="subtitle">Projekt końcowy z przedmiotu Programowanie Obiektowe</p>
-        <p id="subtitle">APo, WWo</p>
+        <p id="subtitle">Projekt końcowy - Programowanie Obiektowe</p>
+        <p id="subtitle">APl, WWo</p>
     </div>
   );
 }

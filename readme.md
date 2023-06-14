@@ -1,5 +1,7 @@
 # Kalkulator (Projekt końcowy z przedmiotu Programowanie Obiektowe)
 
+Autorzy: Anna Pierzchała, Wojciech Woźniak
+
 ## Opis
 Kalkulator pozwalający wykonać wszystkie podstawowe operacje arytmetyczne. Projekt końcowy - przedmiot Programowanie Obiektowe.
 
