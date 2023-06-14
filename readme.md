@@ -16,7 +16,7 @@ Strona będzie dostępna pod adresem `localhost:5173`
 
 Po pierwszym uruchomieniu, by ponownie uruchomić aplikację wystarczy wywołać `npm run dev` w folderze z projektem.
 
-Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages [link](https://wojwozniak.github.io/oop-project/)
+Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages [link](https://wojwozniak.github.io/oop-calculator/)
 
 
 ## Technologie
@@ -34,8 +34,32 @@ Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 - Pliki konfiguracyjne (wszystkie pliki poza powyższymi)
 
 
-## Struktura kalkulatora
-#TODO streścimy tutaj diagram klas
+## Struktura klas
+
+Trzeba zauważyć tutaj pewne rozróżnienie - klasami są i komponenty (chociaż od paru lat w reactcie już nie definiujemy ich słowem "class") i klasy będące bezpośrednią częścią kalkulatora. Na diagramie przedstawiliśmy te drugie klasy - tutaj rozpiszemy obie grupy.
+
+### Komponenty
+
+- main.tsx - punkt wyjściowy strony, w którym umieszczamy komponenty do wyrenderowania w przeglądarce
+- Head i Foot - komponenty nagłówka i stopki strony, umieszczone wokół głównego komponentu Main
+- Main - komponent będący główną częścią strony, odpowiedzialny za wygląd kalkulatora, znajdują się w nim kolejne komponenty
+- Calculator - komponent kontrolujący działanie kalkulatora - przechowuje stan, przyjmuje żądania zmian z przycisków i aktualizuje wyświetlacz
+- Screen - komponent wyświetlacza, wyświetla aktualny stan kalkulatora
+- Buttons - komponent przycisków, odpowiedzialny za wyrenderowanie każdego przycisków z przypisanymi odpowiednimi funkcjami
+    - Button - "wzorzec" przycisku wykorzystywany przez Buttons do wygenerowania każdego z przycisków
+
+
+### Klasy kalkulatora
+
+- Expression - ogólna, abstrakcyjna klasa wyrażenia arytmetycznego
+- NumberExpression - klasa reprezentująca liczbę
+- UnaryOperation - klasa reprezentująca operację jednoargumentową
+   - UnaryMinusOperation - klasa reprezentująca operację unarnego minusa
+- BinaryOperation - klasa reprezentująca operację dwuargumentową
+   - AdditionOperation - klasa reprezentująca operację dodawania
+   - SubtractionOperation - klasa reprezentująca operację odejmowania
+   - MultiplicationOperation - klasa reprezentująca operację mnożenia
+   - DivisionOperation - klasa reprezentująca operację dzielenia
 
 
 ## Struktura repozytorium
@@ -58,4 +82,4 @@ Poniżej znajduje się rozpiska wszystkich folderów i plików w repozytorium (p
 - tsconfig.node.json - plik konfiguracyjny typescript
 - vite.config.ts - plik konfiguracyjny vite
 
-Repozytorium zawiera również diagram klas kalkulatora [z tej strony](https://draw.io/)
+Repozytorium zawiera również diagram klas kalkulatora w formacie .drawio oraz .png - folder diagrams

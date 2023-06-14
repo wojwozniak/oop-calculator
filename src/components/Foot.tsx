@@ -25,6 +25,7 @@ const Foot:React.FunctionComponent = () => {
   return (
     <div id="foot">
         <p id="subtitle">Projekt końcowy z przedmiotu Programowanie Obiektowe</p>
+        <p id="subtitle">APo, WWo</p>
     </div>
   );
 }

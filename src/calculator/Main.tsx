@@ -28,7 +28,7 @@ const Main: React.FunctionComponent = () => {
   // - komponent Calculator (zawierający logikę kalkulatora i renderujący jego przyciski i ekran)
   return (
     <div id="app">
-      <p id="brand">classicall</p>
+      <p id="brand">classical</p>
       <p id="brand-text">Electronic Calculator</p>
       <Calculator />
     </div>
