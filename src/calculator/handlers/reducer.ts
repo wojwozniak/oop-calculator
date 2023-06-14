@@ -173,8 +173,8 @@ const reducer = (state: string, action: string): string => {
 }
 
 /**
- * Function that check if given character is a sign
- * @param {string} sign - character to check 
+ * Funkcja sprawdzająca, czy dany symbol jest znakiem
+ * @param {string} sign - sprawdzany symbol 
  * @returns {boolean}
  */
 const isSign = (sign: string): boolean => {
