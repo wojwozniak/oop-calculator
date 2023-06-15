@@ -57,8 +57,10 @@ const reducer = (state: string, action: string): string => {
     // Nie pozwalamy na dodawanie znaku (niebędącego unarnym minusem) 
     // jeśli stan jest pusty (domyślnie 0)
     if (state === "0") {
-        if (action === "plus" || action === "multiply" || action === "dot" || action === "divide") {
+        if (action === "plus" || action === "multiply" || action === "divide") {
             return "0";
+        } else if (action === "dot") {
+            return "0.";
         }
 
         // Aktualizujemy zmienną helper
