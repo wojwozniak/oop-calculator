@@ -193,6 +193,11 @@ const isSign = (sign: string): boolean => {
  */
 const isDotPlacable = (state: string, lastSign: string): boolean => {
 
+    // Liczby typu 0.2
+    if(state === '0') {
+        return true;
+    }
+
     // Funkcja pomocnicza, która sprawdza, czy dany znak jest znakiem funkcyjnym
     const isFunctionSign = (x: string) => isSign(x) && x !== '.';
 
