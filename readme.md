@@ -6,7 +6,7 @@ Autorzy: Anna Pierzchała, Wojciech Woźniak
 Kalkulator pozwalający wykonać wszystkie podstawowe operacje arytmetyczne. Projekt końcowy - przedmiot Programowanie Obiektowe.
 
 
-*Napisany przez nas kod znajduje się w folderze src*
+*Napisany przez nas kod znajduje się w folderze src.*
 
 
 ## Jak skompilować i uruchomić
@@ -18,22 +18,22 @@ Strona będzie dostępna pod adresem `localhost:5173`
 
 Po pierwszym uruchomieniu, by ponownie uruchomić aplikację wystarczy wywołać `npm run dev` w folderze z projektem.
 
-Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages [link](https://wojwozniak.github.io/oop-calculator/)
+Niezależnie od powyższej metody strona dostępna również za pośrednictwem Github Pages [link](https://wojwozniak.github.io/oop-calculator/).
 
 
 ## Technologie
-Strona została stworzona przy użyciu vite (`npm create vite@latest`)
-Głównym językiem użytym do stworzenia strony był Typescript (biblioteka React)
-Do wygenerowania diagramu klas użyto strony [draw.io](https://draw.io/)
-Wykorzystaliśmy również generator siatki CSS [CSS Grid Generator](https://cssgrid-generator.netlify.app/)
-Strona hostowana jest za pomocą Github Pages
+Strona została stworzona przy użyciu vite (`npm create vite@latest`).
+Głównym językiem użytym do stworzenia strony był Typescript (biblioteka React).
+Do wygenerowania diagramu klas użyto strony [draw.io](https://draw.io/).
+Wykorzystaliśmy również generator siatki CSS [CSS Grid Generator](https://cssgrid-generator.netlify.app/).
+Strona hostowana jest za pomocą Github Pages.
 
 
 ## Uproszczona struktura projektu
 Aby zrozumieć działanie aplikacji można podzielić ją na trzy części:
 - Kod kalkulatora (folder src/calculator)
 - Kod reszty strony (folder src/components,  pliki src/main.tsx i index.html)
-- Pliki konfiguracyjne (wszystkie pliki poza powyższymi)
+- Pliki konfiguracyjne (wszystkie pliki poza powyższymi).
 
 
 ## Struktura klas
@@ -65,7 +65,7 @@ Trzeba zauważyć tutaj pewne rozróżnienie - klasami są i komponenty (chocia�
 
 
 ## Struktura repozytorium
-Poniżej znajduje się rozpiska wszystkich folderów i plików w repozytorium (poza tymi bezpośrednio związanymi z kalkulatorem - te zostały opisane powyżej)
+Poniżej znajduje się rozpiska wszystkich folderów i plików w repozytorium (poza tymi bezpośrednio związanymi z kalkulatorem - te zostały opisane powyżej):
 
 - node_modules - folder z zależnościami deweloperskimi - generuje się po wywołaniu npm install (nic tu nie zmieniamy)
 - Folder src:
@@ -84,4 +84,4 @@ Poniżej znajduje się rozpiska wszystkich folderów i plików w repozytorium (p
 - tsconfig.node.json - plik konfiguracyjny typescript
 - vite.config.ts - plik konfiguracyjny vite
 
-Repozytorium zawiera również diagram klas kalkulatora w formacie .drawio oraz .png - folder diagrams
+Repozytorium zawiera również diagram klas kalkulatora w formacie .drawio oraz .png - folder diagrams.
